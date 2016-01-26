@@ -1,6 +1,6 @@
 # Adafruit_Python_SHT31
 
-This Python driver allows you to read data from the [Adafruit SHT31D Breakout](https://www.adafruit.com/products/2652) on a Raspberry Pi, Pi2 or similar device.
+This Python driver allows you to read data from the [Adafruit SHT31D Breakout](https://www.adafruit.com/products/2857) on a Raspberry Pi, Pi2 or similar device.
 
 ## Requirements
 
