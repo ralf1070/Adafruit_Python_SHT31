@@ -1,2 +1,6 @@
 *.pyc
 *.log
+build
+dist
+MANIFEST
+Adafruit_SHT31.egg-info
