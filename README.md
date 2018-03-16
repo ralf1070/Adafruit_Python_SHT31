@@ -7,13 +7,23 @@ This Python driver allows you to read data from the [Adafruit SHT31D Breakout](h
 This driver requires that you have previously installed the
 [Adafruit_Python_GPIO](https://github.com/adafruit/Adafruit_Python_GPIO) package.
 
-On Raspbian, you can install this package with the following commands:
+On Raspbian, you can install this dependency with the following commands:
 
 ```
 sudo apt-get update
 sudo apt-get install build-essential python-pip python-dev python-smbus git
 git clone https://github.com/adafruit/Adafruit_Python_GPIO.git
 cd Adafruit_Python_GPIO
+sudo python setup.py install
+```
+
+## Installation
+
+On Raspbian, you can install this package with the following commands:
+
+```
+git clone https://github.com/ralf1070/Adafruit_Python_SHT31.git install
+cd Adafruit_Python_SHT31.git
 sudo python setup.py install
 ```
 
