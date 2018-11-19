@@ -52,7 +52,7 @@ python Adafruit_SHT31_Example.py
 This driver is based on the [Adafruit_BME280](https://github.com/adafruit/Adafruit_Python_BME280)
 driver by Tony DiCola (Adafruit Industries), with BME280 additions kindly provided by
 David J. Taylor (www.satsignal.eu).
-Modified for use with SHT31D by Ralf Mueller, (www.bj-ig.de)
+Modified for use with SHT31D by Ralf Mueller (www.bj-ig.de).
 
 # MIT License
 
