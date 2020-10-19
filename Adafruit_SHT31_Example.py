@@ -1,3 +1,6 @@
+import time
+from sys import stdout
+
 from Adafruit_SHT31 import *
 #logging.basicConfig(filename='example.log',level=logging.DEBUG)
 
@@ -13,21 +16,21 @@ def print_status():
     is_tracking_humidity_alert = sensor.is_tracking_humidity_alert()
     is_heater_active = sensor.is_heater_active()
     is_alert_pending = sensor.is_alert_pending()
-    print 'Status           = {:04X}'.format(status)
-    print '  Data CRC Error = {}'.format(is_data_crc_error)
-    print '  Command Error  = {}'.format(is_command_error)
-    print '  Reset Detected = {}'.format(is_reset_detected)
-    print '  Tracking Temp  = {}'.format(is_tracking_temperature_alert)
-    print '  Tracking RH    = {}'.format(is_tracking_humidity_alert)
-    print '  Heater Active  = {}'.format(is_heater_active)
-    print '  Alert Pending  = {}'.format(is_alert_pending)
+    print( 'Status           = {:04X}'.format(status))
+    print( '  Data CRC Error = {}'.format(is_data_crc_error))
+    print( '  Command Error  = {}'.format(is_command_error))
+    print( '  Reset Detected = {}'.format(is_reset_detected))
+    print( '  Tracking Temp  = {}'.format(is_tracking_temperature_alert))
+    print( '  Tracking RH    = {}'.format(is_tracking_humidity_alert))
+    print( '  Heater Active  = {}'.format(is_heater_active))
+    print( '  Alert Pending  = {}'.format(is_alert_pending))
 
 degrees = sensor.read_temperature()
 humidity = sensor.read_humidity()
 
 print_status()
-print 'Temp             = {0:0.3f} deg C'.format(degrees)
-print 'Humidity         = {0:0.2f} %'.format(humidity)
+print( 'Temp             = {0:0.3f} deg C'.format(degrees))
+print( 'Humidity         = {0:0.2f} %'.format(humidity))
 
 sensor.clear_status()
 sensor.set_heater(True)
@@ -35,3 +38,14 @@ print_status()
 
 sensor.set_heater(False)
 print_status()
+
+print('-'*20)
+print( 'Temp', end='\t')
+print( 'Humidity')
+while True:
+    degrees = sensor.read_temperature()
+    humidity = sensor.read_humidity()
+    print('\r{:.3f}'.format(degrees), end='\t')
+    print('{:.2f}'.format(humidity),end=' ' * 3)
+    stdout.flush()
+    time.sleep(0.2)
